@@ -22,7 +22,9 @@
             <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
           <% end %>
            <td>コメント数:<%= @book.book_comments.count %></td>
-           <td><%= render 'favorites/btn', book: @book %></td>
+           <td id="favorite_buttons_<%= @book.id %>">
+             <%= render 'favorites/btn', book: @book %>
+           </td>
        </tr>
       </table>
 
@@ -32,7 +34,7 @@
         <tr>
           <td>
           <%= form_with model:[@book,@book_comment] do |f| %>
-          <%= f.text_area :comment, size: "50x5"  %>
+          <%= f.text_area :comment, size: "50x5" %>
           <%= f.submit "送信" %>
           <% end %>
           </td>
