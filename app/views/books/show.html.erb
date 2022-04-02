@@ -27,19 +27,10 @@
            </td>
        </tr>
       </table>
-
+    <div id="comments_area">
       <%= render 'book_comments/index',book: @book %>
-
-        <table>
-        <tr>
-          <td>
-          <%= form_with model:[@book,@book_comment] do |f| %>
-          <%= f.text_area :comment, size: "50x5" %>
-          <%= f.submit "送信" %>
-          <% end %>
-          </td>
-        </tr>
-      </table>
+    </div>
+      <%= render 'book_comments/form',book: @book, book_comment: @book_comment %>
     </div>
   </div>
 </div>

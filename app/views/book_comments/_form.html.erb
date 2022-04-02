@@ -1,0 +1,10 @@
+<table>
+  <tr>
+     <td>
+     <%= form_with(model:[book,book_comment], local: false) do |f| %>
+     <%= f.text_area :comment, size: "50x5" %>
+     <%= f.submit "送信" %>
+     <% end %>
+    </td>
+  </tr>
+</table>
